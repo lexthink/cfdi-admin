@@ -1,5 +1,8 @@
 doctrine:
     dbal:
+        types:
+            uuid: 'App\Doctrine\Types\UuidType'
+
         url: '%env(resolve:DATABASE_URL)%'
 
     orm:
