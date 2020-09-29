@@ -2,3 +2,4 @@ doctrine_migrations:
     migrations_paths:
         'App\Migrations': '%kernel.project_dir%/migrations'
         'CfdiAdmin\Account\Migrations': '%kernel.project_dir%/module/account/migrations'
+        'CfdiAdmin\Authentication\Migrations': '%kernel.project_dir%/module/authentication/migrations'

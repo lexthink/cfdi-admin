@@ -1,0 +1,27 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CfdiAdmin\Authentication\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+
+    CfdiAdmin\Authentication\EventSubscriber\:
+        resource: '../../EventSubscriber/'
+        tags: ['kernel.event_subscriber']
+
+    CfdiAdmin\Authentication\EventSubscriber\LocaleSubscriber:
+        tags: ['kernel.event_subscriber']
+        arguments:
+            $defaultLocale: '%locale%'
+
+    CfdiAdmin\Authentication\Manager\:
+        resource: '../../Manager/'
+
+    CfdiAdmin\Authentication\Repository\:
+        resource: '../../Repository/'
+
+    CfdiAdmin\Authentication\Security\:
+        resource: '../../Security/'
