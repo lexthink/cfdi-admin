@@ -61,12 +61,14 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "CfdiAdmin\\Account\\": "module/account/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "App\\Tests\\": "tests/",
+            "CfdiAdmin\\Account\\Tests\\": "module/account/tests/"
         }
     },
     "config": {

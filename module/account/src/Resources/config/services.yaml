@@ -1,0 +1,17 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CfdiAdmin\Account\Command\:
+        resource: '../../Command/'
+        tags: ['console.command']
+
+    CfdiAdmin\Account\Command\CreateUserCommand:
+        tags: ['console.command']
+        arguments:
+            $defaultLocale: '%locale%'
+
+    CfdiAdmin\Account\Repository\:
+        resource: '../../Repository/'

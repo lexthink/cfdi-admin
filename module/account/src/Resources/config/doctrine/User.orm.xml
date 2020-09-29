@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                        https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="CfdiAdmin\Account\Entity\User" table="users">
+        <id name="id" type="uuid" unique="true" />
+        <field name="email" type="string" length="255" unique="true" />
+        <field name="password" type="string" />
+        <field name="locale" type="string" length="5" nullable="true" />
+        <field name="enabled" type="boolean" />
+        <field name="locked" type="boolean" />
+        <field name="expiresAt" type="datetime" nullable="true" />
+        <field name="credentialsExpiresAt" type="datetime" nullable="true" />
+        <field name="confirmationToken" type="string" length="180" unique="true" nullable="true" />
+        <field name="passwordRequestedAt" type="datetime" nullable="true" />
+        <field name="lastLoginAt" type="datetime" nullable="true" />
+        <field name="sessionId" type="string" nullable="true" />
+        <field name="createdAt" type="datetime" />
+    </entity>
+</doctrine-mapping>
