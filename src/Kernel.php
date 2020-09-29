@@ -36,5 +36,18 @@ class Kernel extends BaseKernel
         } elseif (is_file($path = \dirname(__DIR__).'/config/routes.php')) {
             (require $path)($routes->withPath($path), $this);
         }
+
+        $this->configureAbstractModuleRoutes($routes);
+    }
+
+    private function configureAbstractModuleRoutes(RoutingConfigurator $routes): void
+    {
+        foreach ($this->getBundles() as $bundle) {
+            if ($bundle instanceof AbstractModule) {
+                if (is_file($bundle->getPath().'/Resources/config/routes.yaml')) {
+                    $routes->import($bundle->getPath().'/Resources/config/routes.yaml');
+                }
+            }
+        }
     }
 }
